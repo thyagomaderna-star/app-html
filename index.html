@@ -16,13 +16,13 @@
 <body>
     <div class="app-container">
         <!-- Sidebar Navigation -->
-        <aside class="sidebar" id="sidebar">
+        <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
             <div class="logo-container">
-                <div class="logo-icon">{'/>'}</div>
+                <span class="logo-icon" aria-hidden="true">{'/>'}</span>
                 <h1 class="logo-text">Web<span class="highlight">Master</span></h1>
             </div>
             
-            <nav class="nav-menu" id="nav-menu">
+            <nav class="nav-menu" id="nav-menu" aria-label="Temas del curso">
                 <!-- Navigation items will be injected here by JS -->
             </nav>
         </aside>
@@ -32,10 +32,8 @@
             <header class="top-header">
                 <h2 id="current-topic-title">Bienvenido</h2>
                 <div class="progress-container">
-                    <span id="progress-text">Progreso: 0%</span>
-                    <div class="progress-bar-bg">
-                        <div class="progress-bar-fill" id="progress-bar"></div>
-                    </div>
+                    <label id="progress-text" for="progress-bar">Progreso: 0%</label>
+                    <progress id="progress-bar" value="0" max="100">0%</progress>
                 </div>
             </header>
 
@@ -50,38 +48,41 @@
                 </section>
 
                 <!-- Interactive Workspace -->
-                <section class="workspace-section animate-fade-in" id="workspace-container" style="display: none;">
-                    <div class="glass-panel editor-panel">
-                        <div class="panel-header">
+                <section class="workspace-section animate-fade-in" id="workspace-container" style="display: none;" aria-label="Entorno de trabajo interactivo">
+                    <article class="glass-panel editor-panel">
+                        <header class="panel-header">
                             <h3>Editor de Código</h3>
-                            <button id="run-code-btn" class="primary-btn">Ejecutar Código</button>
-                        </div>
+                            <div>
+                                <button id="reset-code-btn" class="secondary-btn" title="Restaurar al código original">↻ Restaurar</button>
+                                <button id="run-code-btn" class="primary-btn">Ejecutar Código</button>
+                            </div>
+                        </header>
                         <div class="editor-container">
-                            <textarea id="code-editor" spellcheck="false"></textarea>
+                            <textarea id="code-editor" spellcheck="false" aria-label="Editor de código HTML y CSS"></textarea>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="glass-panel preview-panel">
-                        <div class="panel-header">
+                    <article class="glass-panel preview-panel">
+                        <header class="panel-header">
                             <h3>Vista Previa</h3>
-                        </div>
+                        </header>
                         <div class="preview-container">
-                            <iframe id="preview-frame" title="Live Preview"></iframe>
+                            <iframe id="preview-frame" title="Vista previa del código en vivo"></iframe>
                         </div>
-                    </div>
+                    </article>
                 </section>
 
                 <!-- Quiz Section -->
-                <section class="glass-panel quiz-section animate-fade-in" id="quiz-container" style="display: none;">
-                    <div class="panel-header">
+                <section class="glass-panel quiz-section animate-fade-in" id="quiz-container" style="display: none;" aria-label="Evaluación del tema">
+                    <header class="panel-header">
                         <h3>Prueba tu Conocimiento</h3>
-                    </div>
+                    </header>
                     <div id="quiz-content">
                         <p id="quiz-question" class="quiz-question"></p>
-                        <div id="quiz-options" class="quiz-options">
+                        <div id="quiz-options" class="quiz-options" role="group" aria-label="Opciones de respuesta">
                             <!-- Options injected by JS -->
                         </div>
-                        <div id="quiz-feedback" class="quiz-feedback"></div>
+                        <div id="quiz-feedback" class="quiz-feedback" aria-live="polite"></div>
                     </div>
                 </section>
             </div>
@@ -93,6 +94,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/css/css.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
