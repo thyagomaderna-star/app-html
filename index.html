@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Masterclass | Aprende de forma interactiva</title>
+    <meta name="description" content="Plataforma interactiva para aprender HTML y CSS desde básico hasta avanzado con pruebas y entorno de código en vivo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo-container">
+                <div class="logo-icon">{'/>'}</div>
+                <h1 class="logo-text">Web<span class="highlight">Master</span></h1>
+            </div>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <!-- Navigation items will be injected here by JS -->
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <h2 id="current-topic-title">Bienvenido</h2>
+                <div class="progress-container">
+                    <span id="progress-text">Progreso: 0%</span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="progress-bar"></div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-scroll-area" id="content-area">
+                <!-- Theory Section -->
+                <section class="glass-panel theory-section animate-fade-in">
+                    <div id="theory-content">
+                        <!-- Theory content will be injected here -->
+                        <h3>Selecciona un tema para comenzar</h3>
+                        <p>Aprende creando. En esta plataforma dominarás HTML y CSS mediante la práctica constante y evaluación continua.</p>
+                    </div>
+                </section>
+
+                <!-- Interactive Workspace -->
+                <section class="workspace-section animate-fade-in" id="workspace-container" style="display: none;">
+                    <div class="glass-panel editor-panel">
+                        <div class="panel-header">
+                            <h3>Editor de Código</h3>
+                            <button id="run-code-btn" class="primary-btn">Ejecutar Código</button>
+                        </div>
+                        <div class="editor-container">
+                            <textarea id="code-editor" spellcheck="false"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel preview-panel">
+                        <div class="panel-header">
+                            <h3>Vista Previa</h3>
+                        </div>
+                        <div class="preview-container">
+                            <iframe id="preview-frame" title="Live Preview"></iframe>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quiz Section -->
+                <section class="glass-panel quiz-section animate-fade-in" id="quiz-container" style="display: none;">
+                    <div class="panel-header">
+                        <h3>Prueba tu Conocimiento</h3>
+                    </div>
+                    <div id="quiz-content">
+                        <p id="quiz-question" class="quiz-question"></p>
+                        <div id="quiz-options" class="quiz-options">
+                            <!-- Options injected by JS -->
+                        </div>
+                        <div id="quiz-feedback" class="quiz-feedback"></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <!-- CodeMirror JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
